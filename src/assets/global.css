@@ -1,0 +1,33 @@
+:root {
+    --fs1: 40px;
+    --fs2: 36px;
+    --fs3: 32px;
+    --fs4: 28px;
+    --fs5: 24px;
+    --fs6: 20px;
+    --fs7: 18px;
+    --fs8: 16px;
+    --pd1: 1.3% 5%;
+    --pd2: 7% 5%;
+    --pd3: 4%;
+    --gap1: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.root {
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}

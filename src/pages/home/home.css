@@ -1,0 +1,11 @@
+.home_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.home_page {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+}
