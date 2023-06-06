@@ -18,8 +18,18 @@ export const Corusel = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 400,
+        settings: {
+          infinite: true,
+          dots: false,
+        },
+      },
+    ],
     appendDots: (dots) => (
-      <div>
+      <div style={{ marginBottom: "50px", height: "100px" }}>
         <ul
           style={{
             position: "absolute",
@@ -37,8 +47,6 @@ export const Corusel = () => {
       <div
         className={index ? "dots" : "dots_active"}
         style={{
-          width: "20px",
-          height: "20px",
           borderRadius: "50%",
         }}
       ></div>

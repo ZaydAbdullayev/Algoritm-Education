@@ -1,0 +1,48 @@
+.item_v {
+    height: 280px;
+}
+
+.item_v>img:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: #333333bb;
+}
+
+@media(max-width: 1100px) {
+    .item_v {
+        height: 230px;
+    }
+}
+
+@media(max-width: 780px) {
+    .item_v {
+        height: 180px;
+    }
+
+    .icon {
+        font-size: 60px;
+    }
+}
+
+@media(max-width: 645px) {
+    .item_v {
+        height: 150px;
+    }
+
+    .icon {
+        font-size: 50px;
+    }
+}
+
+@media(max-width: 550px) {
+    .item_v {
+        height: 180px;
+    }
+}
