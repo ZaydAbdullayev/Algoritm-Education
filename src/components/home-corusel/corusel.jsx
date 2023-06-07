@@ -29,7 +29,9 @@ export const Corusel = () => {
       },
     ],
     appendDots: (dots) => (
-      <div style={{ marginBottom: "50px", height: "100px" }}>
+      <div
+        style={{ marginBottom: "50px", height: "100px" }}
+      >
         <ul
           style={{
             position: "absolute",

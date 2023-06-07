@@ -20,9 +20,25 @@
 }
 
 .navbar>:nth-child(1) {
-    font-size: var(--fs1);
     flex: 1;
-    color: yellow;
+}
+
+.navbar>:nth-child(1)>img {
+    width: 31%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media(max-width: 780px) {
+    .navbar>:nth-child(1)>img {
+        width: 40%;
+    }
+}
+
+@media(max-width: 520px) {
+    .navbar>:nth-child(1)>img {
+        width: 50%;
+    }
 }
 
 @media(max-width: 430px) {
@@ -30,7 +46,7 @@
         gap: 25px;
     }
 
-    .navbar>:nth-child(1) {
-        font-size: var(--fs2);
+    .navbar>:nth-child(1)>img {
+        width: 50%;
     }
 }

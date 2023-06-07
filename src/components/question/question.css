@@ -13,7 +13,7 @@
 }
 
 .question_form {
-    width: 73%;
+    width: 65%;
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap1);

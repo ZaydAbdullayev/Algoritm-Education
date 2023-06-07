@@ -1,9 +1,9 @@
 :root {
-    --fs1: 34px;
+    --fs1: 32px;
     --fs2: 24px;
-    --fs3: 20px;
-    --fs4: 18px;
-    --fs5: 16px;
+    --fs3: 18px;
+    --fs4: 16px;
+    --fs5: 14px;
     --pd1: 1.5% 5%;
     --pd2: 7% 5% 0;
     --pd3: 3% 6% 6% 3%;
@@ -31,24 +31,28 @@ a {
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @media(max-width: 1100px) {
     :root {
-        --fs1: 28px;
+        --fs1: 26px;
         --fs2: 20px;
-        --fs3: 18px;
-        --fs4: 16px;
-        --fs5: 14px;
+        --fs3: 16px;
+        --fs4: 14px;
+        --fs5: 12px;
         --pd3: 3% 4% 4% 3%;
     }
 }
 
 @media(max-width: 900px) {
     :root {
-        --fs1: 24px;
+        --fs1: 22px;
         --fs2: 18px;
-        --fs3: 16px;
-        --fs4: 14px;
-        --fs5: 12px;
+        --fs3: 15px;
+        --fs4: 13px;
+        --fs5: 11px;
         --pd1: 2% 5%;
         --pd3: 2.5% 4% 4% 2.5%;
     }
@@ -56,18 +60,17 @@ a {
 
 @media(max-width: 780px) {
     :root {
-        --fs1: 20px;
+        --fs1: 19px;
         --fs2: 16px;
         --fs3: 14px;
         --fs4: 13px;
-        --fs5: 12px;
         --pd3: 4% 9% 7% 4%;
     }
 }
 
 @media(max-width:645px) {
     :root {
-        --fs1: 17px;
+        --fs1: 16px;
         --fs2: 15px;
         --gap1: 20px;
         --gap2: 15px;
@@ -78,12 +81,14 @@ a {
     :root {
         --gap1: 15px;
         --gap2: 10px;
+        --fs3: 12px;
+        --fs4: 11px;
     }
 }
 
 
 @media(max-width: 400px) {
     :root {
-        --pd3: 3% 7% 7% 3%;
+        --pd3: 4% 8% 8% 4%;
     }
 }
