@@ -52,27 +52,27 @@ export const VideoOffer = () => {
     <div className="slider_container">
       <h2>VIDEO LAVXALAR</h2>
       <Slider {...settings} className="slider_box">
-        <Link to="/" target="_blank" className="item item_v">
+        <Link to="https://youtube.com" target="_blank" className="item item_v">
           <img src={slide_img4} alt="alt" />
           <div className="icon">▶</div>
         </Link>
-        <Link to="/" target="_blank" className="item item_v">
+        <Link to="https://youtube.com" target="_blank" className="item item_v">
           <img src={slide_img5} alt="alt" />
           <div className="icon">▶</div>
         </Link>
-        <Link to="/" target="_blank" className="item item_v">
+        <Link to="https://youtube.com" target="_blank" className="item item_v">
           <img src={slide_img6} alt="alt" />
           <div className="icon">▶</div>
         </Link>
-        <Link to="/" target="_blank" className="item item_v">
+        <Link to="https://youtube.com" target="_blank" className="item item_v">
           <img src={slide_img7} alt="alt" />
           <div className="icon">▶</div>
         </Link>
-        <Link to="/" target="_blank" className="item item_v">
+        <Link to="https://youtube.com" target="_blank" className="item item_v">
           <img src={slide_img4} alt="alt" />
           <div className="icon">▶</div>
         </Link>
-        <Link to="/" target="_blank" className="item item_v">
+        <Link to="https://youtube.com" target="_blank" className="item item_v">
           <img src={slide_img5} alt="alt" />
           <div className="icon">▶</div>
         </Link>
