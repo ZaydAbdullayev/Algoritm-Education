@@ -17,6 +17,7 @@
     height: 60px;
     display: none;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 .contact>img {
