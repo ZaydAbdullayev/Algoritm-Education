@@ -13,6 +13,7 @@ export const Home = () => {
       <div className="home_page">
         {/* =========== Main Slider of Algoritm ========== */}
         <Corusel />
+
         {/* ============ About Algoritm's course ========== */}
         <div
           className="course_info_box"
@@ -82,14 +83,19 @@ export const Home = () => {
             <span>DTM</span>
           </div>
         </div>
+
         {/* ============ Conatct us section ========== */}
         <Contact />
+
         {/* ===========  Slider of th about Teacher's ========== */}
         <TeacherCorusel />
+
         {/* =========== Send Question section  ========== */}
         <Question />
+
         {/* =========== Offer video  section  ========== */}
         <VideoOffer />
+
         {/* =========== Algoritm's map from google map  ========== */}
         <AlgoritmMap />
       </div>
