@@ -6,7 +6,7 @@ export const AlgoritmMap = () => {
       className="map_box"
       data-aos="fade-up"
       data-aos-duration="4000"
-      data-aos-offset="200"
+      data-aos-offset="180"
     >
       <h3>BIZNING MANZILIMIZ</h3>
       <iframe

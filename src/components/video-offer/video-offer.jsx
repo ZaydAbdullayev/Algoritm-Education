@@ -47,7 +47,7 @@ export const VideoOffer = () => {
       className="slider_container"
       data-aos="fade-up"
       data-aos-duration="4000"
-      data-aos-offset="200"
+      data-aos-offset="180"
     >
       <h2>VIDEO LAVXALAR</h2>
       <Slider {...settings} className="slider_box">

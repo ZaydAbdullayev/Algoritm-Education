@@ -19,14 +19,14 @@ export const Home = () => {
           className="course_info_box"
           data-aos="fade-up"
           data-aos-duration="4000"
-          data-aos-offset="200"
+          data-aos-offset="170"
         >
           <p>algoritm ta'limda siz</p>
           <div
             className="course_info_item"
             data-aos="fade-up"
             data-aos-duration="4000"
-            data-aos-offset="200"
+            data-aos-offset="170"
           >
             <p>web dasturlash</p>
             <p>
@@ -41,7 +41,7 @@ export const Home = () => {
             className="course_info_item"
             data-aos="fade-up"
             data-aos-duration="4000"
-            data-aos-offset="200"
+            data-aos-offset="170"
           >
             <p>ingliz tili</p>
             <p>
@@ -56,7 +56,7 @@ export const Home = () => {
             className="course_info_item"
             data-aos="fade-up"
             data-aos-duration="4000"
-            data-aos-offset="200"
+            data-aos-offset="170"
           >
             <p>rus tili</p>
             <p>
@@ -71,7 +71,7 @@ export const Home = () => {
             className="course_info_item"
             data-aos="fade-up"
             data-aos-duration="4000"
-            data-aos-offset="200"
+            data-aos-offset="170"
           >
             <p>dtm</p>
             <p>

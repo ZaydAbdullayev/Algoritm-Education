@@ -28,7 +28,7 @@ export const Contact = memo(() => {
       className="contact_box"
       data-aos="fade-up"
       data-aos-duration="4000"
-      data-aos-offset="200"
+      data-aos-offset="180"
     >
       <p>BATAFSIL MA'LUMOT OLISH OCHUN BIZ BILAN BOG'LANIG</p>
       <button
@@ -36,7 +36,7 @@ export const Contact = memo(() => {
         className="send_btn"
         data-aos="fade-up"
         data-aos-duration="4000"
-        data-aos-offset="200"
+        data-aos-offset="180"
       >
         BOG'LANISH
       </button>
