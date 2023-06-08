@@ -11,7 +11,7 @@ import slide_img7 from "../../assets/images/images.jpg";
 
 export const TeacherCorusel = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 700,
     slidesToShow: 4,
@@ -27,7 +27,6 @@ export const TeacherCorusel = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -49,7 +48,7 @@ export const TeacherCorusel = () => {
   };
   return (
     <div className="slider_container">
-      <h2>TAJRIBALI USTOZALRIMIZ</h2>
+      <h2>TAJRIBALI USTOZLARIMIZ</h2>
       <Slider {...settings} className="slider_box">
         <div className="item">
           <img src={slide_img4} alt="foto" />

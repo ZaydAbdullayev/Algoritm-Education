@@ -1,7 +1,10 @@
 import "./layout.css";
 import { Navbar } from "../components/navbar/navbar";
-import { Home } from "../pages/home/home";
+import { Outlet } from "react-router-dom";
+
 import { Footer } from "../components/footer/footer";
+
+import phone from "../assets/images/phone-flat.png";
 
 export const Layout = () => {
   return (
@@ -9,12 +12,15 @@ export const Layout = () => {
       <header>
         <Navbar />
       </header>
-      <section>
-        <Home />
-      </section>
+
+      <Outlet />
+
       <footer>
         <Footer />
       </footer>
+      <a href="tel:+998191111111" className="contact">
+        <img src={phone} alt="icon" />
+      </a>
     </div>
   );
 };

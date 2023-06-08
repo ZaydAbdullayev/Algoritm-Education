@@ -3,12 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./video-offer.css";
-import { Link } from "react-router-dom";
-
-import slide_img4 from "../../assets/images/woman1.jpg";
-import slide_img5 from "../../assets/images/woman.jpg";
-import slide_img6 from "../../assets/images/man2.jpg";
-import slide_img7 from "../../assets/images/images.jpg";
 
 export const VideoOffer = () => {
   const settings = {
@@ -17,7 +11,7 @@ export const VideoOffer = () => {
     speed: 700,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     initialSlide: 0,
@@ -52,30 +46,60 @@ export const VideoOffer = () => {
     <div className="slider_container">
       <h2>VIDEO LAVXALAR</h2>
       <Slider {...settings} className="slider_box">
-        <Link to="https://youtube.com" target="_blank" className="item item_v">
-          <img src={slide_img4} alt="alt" />
-          <div className="icon">▶</div>
-        </Link>
-        <Link to="https://youtube.com" target="_blank" className="item item_v">
-          <img src={slide_img5} alt="alt" />
-          <div className="icon">▶</div>
-        </Link>
-        <Link to="https://youtube.com" target="_blank" className="item item_v">
-          <img src={slide_img6} alt="alt" />
-          <div className="icon">▶</div>
-        </Link>
-        <Link to="https://youtube.com" target="_blank" className="item item_v">
-          <img src={slide_img7} alt="alt" />
-          <div className="icon">▶</div>
-        </Link>
-        <Link to="https://youtube.com" target="_blank" className="item item_v">
-          <img src={slide_img4} alt="alt" />
-          <div className="icon">▶</div>
-        </Link>
-        <Link to="https://youtube.com" target="_blank" className="item item_v">
-          <img src={slide_img5} alt="alt" />
-          <div className="icon">▶</div>
-        </Link>
+        <div className="item item_v">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div className="item item_v">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div className="item item_v">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div className="item item_v">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div className="item item_v">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div className="item item_v">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </Slider>
     </div>
   );

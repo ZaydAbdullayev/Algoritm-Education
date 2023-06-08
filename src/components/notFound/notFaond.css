@@ -26,12 +26,12 @@
 .not_found>a {
     position: relative;
     font-size: 30px;
-    color: plum;
+    color: tomato;
 }
 
 .not_found>a::before {
     position: absolute;
-    top: 0;
+    top: 5%;
     left: -50px;
     content: "\2794";
     animation: fade 0.3s alternate infinite;

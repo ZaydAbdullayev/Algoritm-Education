@@ -23,7 +23,7 @@ export const Question = memo(() => {
           required
         ></textarea>
         <PatternFormat
-          format="+99 8## ### ####"
+          format="+998 ## ### ####"
           allowEmptyFormatting
           mask="_"
           name="phone"

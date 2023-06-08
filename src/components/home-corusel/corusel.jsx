@@ -15,43 +15,15 @@ export const Corusel = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 400,
-        settings: {
-          infinite: true,
-          dots: false,
-        },
-      },
-    ],
+
     appendDots: (dots) => (
-      <div
-        style={{ marginBottom: "50px", height: "100px" }}
-      >
-        <ul
-          style={{
-            position: "absolute",
-            bottom: "10%",
-            left: "50%",
-            translate: "-50%",
-          }}
-        >
-          {" "}
-          {dots}{" "}
-        </ul>
+      <div style={{ marginBottom: "50px" }}>
+        <ul> {dots} </ul>
       </div>
-    ),
-    customPaging: (index) => (
-      <div
-        className={index ? "dots" : "dots_active"}
-        style={{
-          borderRadius: "50%",
-        }}
-      ></div>
     ),
   };
 

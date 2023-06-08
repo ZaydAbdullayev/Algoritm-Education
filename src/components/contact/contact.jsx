@@ -44,7 +44,7 @@ export const Contact = memo(() => {
           className={message ? "first_ac" : "first"}
         />
         <PatternFormat
-          format="+99 8## ### ####"
+          format="+998 ## ### ####"
           allowEmptyFormatting
           required
           mask="_"

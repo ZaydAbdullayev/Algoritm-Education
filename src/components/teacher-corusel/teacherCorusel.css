@@ -6,6 +6,10 @@
     gap: var(--gap1);
 }
 
+.slider_container * {
+    outline: none;
+}
+
 .slider_container>h2 {
     font-size: var(--fs1);
     color: #333;
