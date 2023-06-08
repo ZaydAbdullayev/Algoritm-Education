@@ -4,6 +4,8 @@ import "./assets/global.css";
 import { Router } from "./router";
 import { BrowserRouter } from "react-router-dom";
 import { SnackbarProvider } from "notistack";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,3 +26,5 @@ root.render(
     </SnackbarProvider>
   </Fragment>
 );
+
+AOS.init();

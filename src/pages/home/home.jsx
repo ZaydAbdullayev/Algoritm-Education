@@ -14,9 +14,19 @@ export const Home = () => {
         {/* =========== Main Slider of Algoritm ========== */}
         <Corusel />
         {/* ============ About Algoritm's course ========== */}
-        <div className="course_info_box">
+        <div
+          className="course_info_box"
+          data-aos="fade-up"
+          data-aos-duration="4000"
+          data-aos-offset="200"
+        >
           <p>algoritm ta'limda siz</p>
-          <div className="course_info_item">
+          <div
+            className="course_info_item"
+            data-aos="fade-up"
+            data-aos-duration="4000"
+            data-aos-offset="200"
+          >
             <p>web dasturlash</p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
@@ -26,7 +36,12 @@ export const Home = () => {
             </p>
             <span>{"</>"}</span>
           </div>
-          <div className="course_info_item">
+          <div
+            className="course_info_item"
+            data-aos="fade-up"
+            data-aos-duration="4000"
+            data-aos-offset="200"
+          >
             <p>ingliz tili</p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
@@ -36,7 +51,12 @@ export const Home = () => {
             </p>
             <span>EN</span>
           </div>
-          <div className="course_info_item">
+          <div
+            className="course_info_item"
+            data-aos="fade-up"
+            data-aos-duration="4000"
+            data-aos-offset="200"
+          >
             <p>rus tili</p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
@@ -46,7 +66,12 @@ export const Home = () => {
             </p>
             <span>RU</span>
           </div>
-          <div className="course_info_item">
+          <div
+            className="course_info_item"
+            data-aos="fade-up"
+            data-aos-duration="4000"
+            data-aos-offset="200"
+          >
             <p>dtm</p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,

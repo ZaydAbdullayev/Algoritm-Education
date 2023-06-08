@@ -11,9 +11,20 @@ export const Question = memo(() => {
   };
 
   return (
-    <div className="question_box">
+    <div
+      className="question_box"
+      data-aos="fade-up"
+      data-aos-duration="4000"
+      data-aos-offset="350"
+    >
       <h3>SAVOLLARINGIZGA JAVOB BERISHDAN MAMNUNMIZ</h3>
-      <form className="question_form" onSubmit={handleSubmit}>
+      <form
+        className="question_form"
+        onSubmit={handleSubmit}
+        data-aos="fade-up"
+        data-aos-duration="4000"
+        data-aos-offset="300"
+      >
         <textarea
           name="question"
           id="question"
@@ -27,8 +38,18 @@ export const Question = memo(() => {
           allowEmptyFormatting
           mask="_"
           name="phone"
+          data-aos="fade-right"
+          data-aos-duration="4000"
+          data-aos-offset="300"
         />
-        <button className="send_btn send">HABARNI YUBORISH</button>
+        <button
+          className="send_btn send"
+          data-aos="fade-left"
+          data-aos-duration="4000"
+          data-aos-offset="300"
+        >
+          HABARNI YUBORISH
+        </button>
       </form>
     </div>
   );

@@ -43,12 +43,19 @@ export const VideoOffer = () => {
   };
 
   return (
-    <div className="slider_container">
+    <div
+      className="slider_container"
+      data-aos="fade-up"
+      data-aos-duration="4000"
+      data-aos-offset="350"
+    >
       <h2>VIDEO LAVXALAR</h2>
       <Slider {...settings} className="slider_box">
         <div className="item item_v">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -57,7 +64,9 @@ export const VideoOffer = () => {
         </div>
         <div className="item item_v">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -66,7 +75,9 @@ export const VideoOffer = () => {
         </div>
         <div className="item item_v">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -75,7 +86,9 @@ export const VideoOffer = () => {
         </div>
         <div className="item item_v">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -84,7 +97,9 @@ export const VideoOffer = () => {
         </div>
         <div className="item item_v">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -93,7 +108,9 @@ export const VideoOffer = () => {
         </div>
         <div className="item item_v">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/cruslgGRJgw"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

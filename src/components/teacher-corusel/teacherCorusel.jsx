@@ -47,8 +47,14 @@ export const TeacherCorusel = () => {
     ],
   };
   return (
-    <div className="slider_container">
+    <div
+      className="slider_container"
+      data-aos="fade-up"
+      data-aos-duration="4000"
+      data-aos-offset="350"
+    >
       <h2>TAJRIBALI USTOZLARIMIZ</h2>
+
       <Slider {...settings} className="slider_box">
         <div className="item">
           <img src={slide_img4} alt="foto" />

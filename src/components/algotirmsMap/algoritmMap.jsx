@@ -2,7 +2,12 @@ import "./algoritmMap.css";
 
 export const AlgoritmMap = () => {
   return (
-    <div className="map_box">
+    <div
+      className="map_box"
+      data-aos="fade-up"
+      data-aos-duration="4000"
+      data-aos-offset="300"
+    >
       <h3>BIZNING MANZILIMIZ</h3>
       <iframe
         className="map_item"
@@ -14,8 +19,16 @@ export const AlgoritmMap = () => {
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
+        data-aos="fade-up"
+        data-aos-duration="4000"
+        data-aos-offset="300"
       ></iframe>
-      <div className="contact_us">
+      <div
+        className="contact_us"
+        data-aos="fade-up"
+        data-aos-duration="4000"
+        data-aos-offset="200"
+      >
         <p>
           It's a long established fact that a reader will be distracted by the
           redable content of a page when a looking at it's layout. The point of

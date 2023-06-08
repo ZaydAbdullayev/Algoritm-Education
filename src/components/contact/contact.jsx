@@ -24,15 +24,25 @@ export const Contact = memo(() => {
   };
 
   return (
-    <div className="contact_box">
+    <div
+      className="contact_box"
+      data-aos="fade-up"
+      data-aos-duration="4000"
+      data-aos-offset="350"
+    >
       <p>BATAFSIL MA'LUMOT OLISH OCHUN BIZ BILAN BOG'LANIG</p>
-      <button onClick={sendMessage} className="send_btn">
+      <button
+        onClick={sendMessage}
+        className="send_btn"
+        data-aos="fade-up"
+        data-aos-duration="4000"
+        data-aos-offset="350"
+      >
         BOG'LANISH
       </button>
       <form
         className={message ? "form open_form" : "form"}
         onSubmit={handleSubmit}
-        autoFocus
       >
         <input
           type="text"

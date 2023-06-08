@@ -21,13 +21,14 @@
 
 #question {
     min-width: 100%;
-    min-height: 150px;
-    max-height: 170px;
+    height: 150px;
     padding: 2%;
     overflow-y: auto;
     border: 1px solid #333;
     border-radius: 10px;
     font-size: var(--fs3);
+    resize: none;
+    outline: none;
 }
 
 .question_form>input,
