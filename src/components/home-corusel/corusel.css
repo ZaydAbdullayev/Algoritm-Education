@@ -42,7 +42,9 @@
         height: 380px;
     }
 
-
+    .slick-dots li button:before {
+        font-size: 15px;
+    }
 }
 
 @media(max-width: 550px) {
@@ -50,10 +52,8 @@
         height: 300px;
     }
 
-    .dots,
-    .dots_active {
-        width: 14px;
-        height: 14px
+    .slick-dots li button:before {
+        font-size: 13px;
     }
 }
 
@@ -62,10 +62,8 @@
         height: 230px;
     }
 
-    .dots,
-    .dots_active {
-        width: 10px;
-        height: 10px;
+    .slick-dots li button:before {
+        font-size: 11px;
     }
 }
 
