@@ -6,7 +6,7 @@ export const AlgoritmMap = () => {
       className="map_box"
       data-aos="fade-up"
       data-aos-duration="4000"
-      data-aos-offset="300"
+      data-aos-offset="200"
     >
       <h3>BIZNING MANZILIMIZ</h3>
       <iframe
@@ -21,13 +21,13 @@ export const AlgoritmMap = () => {
         referrerpolicy="no-referrer-when-downgrade"
         data-aos="fade-up"
         data-aos-duration="4000"
-        data-aos-offset="300"
+        data-aos-offset="200"
       ></iframe>
       <div
         className="contact_us"
         data-aos="fade-up"
         data-aos-duration="4000"
-        data-aos-offset="200"
+        data-aos-offset="150"
       >
         <p>
           It's a long established fact that a reader will be distracted by the

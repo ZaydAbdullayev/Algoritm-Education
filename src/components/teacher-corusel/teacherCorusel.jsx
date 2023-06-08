@@ -51,7 +51,7 @@ export const TeacherCorusel = () => {
       className="slider_container"
       data-aos="fade-up"
       data-aos-duration="4000"
-      data-aos-offset="350"
+      data-aos-offset="200"
     >
       <h2>TAJRIBALI USTOZLARIMIZ</h2>
 

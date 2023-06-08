@@ -40,13 +40,13 @@ export const Question = memo(() => {
           name="phone"
           data-aos="fade-right"
           data-aos-duration="4000"
-          data-aos-offset="300"
+          data-aos-offset="200"
         />
         <button
           className="send_btn send"
           data-aos="fade-left"
           data-aos-duration="4000"
-          data-aos-offset="300"
+          data-aos-offset="200"
         >
           HABARNI YUBORISH
         </button>
