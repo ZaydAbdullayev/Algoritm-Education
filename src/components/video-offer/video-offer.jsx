@@ -57,9 +57,9 @@ export const VideoOffer = () => {
             height="315"
             src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className="item item_v">
@@ -68,9 +68,9 @@ export const VideoOffer = () => {
             height="315"
             src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className="item item_v">
@@ -79,9 +79,9 @@ export const VideoOffer = () => {
             height="315"
             src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className="item item_v">
@@ -90,9 +90,9 @@ export const VideoOffer = () => {
             height="315"
             src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className="item item_v">
@@ -101,9 +101,9 @@ export const VideoOffer = () => {
             height="315"
             src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className="item item_v">
@@ -112,11 +112,11 @@ export const VideoOffer = () => {
             height="315"
             src="https://www.youtube.com/embed/fcry0C0hlQg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
-        </div>
+        </div>    
       </Slider>
     </div>
   );

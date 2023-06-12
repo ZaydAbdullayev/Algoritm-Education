@@ -16,9 +16,9 @@ export const AlgoritmMap = () => {
         width="100%"
         height="400"
         style={{ border: "0" }}
-        allowfullscreen=""
+        allowFullScreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerPolicy="no-referrer-when-downgrade"
         data-aos="fade-up"
         data-aos-duration="4000"
         data-aos-offset="200"
