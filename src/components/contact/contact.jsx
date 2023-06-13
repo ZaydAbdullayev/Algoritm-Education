@@ -2,25 +2,44 @@ import React, { memo, useState } from "react";
 import "./contact.css";
 import { PatternFormat } from "react-number-format";
 import { useSnackbar } from "notistack";
+import axios from "axios";
 
+const base_url = process.env.REACT_APP_BASE_URL;
 export const Contact = memo(() => {
   const [message, setMessage] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
 
   const sendMessage = () => {
-    setMessage(!message);
+    setMessage((prevMessage) => !prevMessage);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-    console.log(data);
-    document.querySelector("form").reset();
+    data.phone = data?.phone?.split(" ")?.join("");
+
+    const config = {
+      method: "post",
+      url: `${base_url}/send/message`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: JSON.stringify(data),
+    };
+
+    try {
+      const res = await axios(config);
+      console.log(res?.data?.message);
+      const msg =
+        " Habar muvoffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz!!!";
+      enqueueSnackbar(msg, { variant: "default" });
+    } catch (err) {
+      console.log(err);
+    }
+
+    e.target.reset();
     setMessage(false);
-    const msg =
-      " Habar muvoffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz!!!";
-    enqueueSnackbar(msg, { variant: "default" });
   };
 
   return (
@@ -35,7 +54,7 @@ export const Contact = memo(() => {
         onClick={sendMessage}
         className="send_btn"
         data-aos="fade-up"
-        data-aos-duration="4000"
+        data-aos-duration="7000"
         data-aos-offset="180"
       >
         BOG'LANISH
@@ -47,7 +66,7 @@ export const Contact = memo(() => {
         <input
           type="text"
           name="name"
-          placeholder="Ismingiz ?"
+          placeholder="Ismingiz?"
           required
           autoCapitalize="off"
           autoComplete="off"
@@ -61,7 +80,7 @@ export const Contact = memo(() => {
           name="phone"
           className={message ? "second_ac" : "second"}
         />
-        <button className={message ? " btn btn_ac phone" : "btn phone"}>
+        <button className={message ? "btn btn_ac phone" : "btn phone"}>
           Bog'lanish
         </button>
       </form>

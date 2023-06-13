@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import { Corusel } from "../../components/home-corusel/corusel";
 import { Contact } from "../../components/contact/contact";
@@ -6,8 +6,22 @@ import { TeacherCorusel } from "../../components/teacher-corusel/teacherCorusel"
 import { Question } from "../../components/question/question";
 import { VideoOffer } from "../../components/video-offer/video-offer";
 import { AlgoritmMap } from "../../components/algotirmsMap/algoritmMap";
+import axios from "axios";
 
+const base_url = process.env.REACT_APP_BASE_URL;
 export const Home = () => {
+  const [categori, setCategori] = useState([]);
+  useEffect(() => {
+    const url = `${base_url}/categories`;
+    axios(url)
+      .then((res) => {
+        setCategori(res.data?.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div className="home_container">
       <div className="home_page">
@@ -22,66 +36,21 @@ export const Home = () => {
           data-aos-offset="170"
         >
           <p>algoritm ta'limda siz</p>
-          <div
-            className="course_info_item"
-            data-aos="fade-up"
-            data-aos-duration="4000"
-            data-aos-offset="170"
-          >
-            <p>web dasturlash</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-              quis autem. Vel recusandae, nihil consequuntur pariatur maxime
-              excepturi fugit et eos esse aliquam commodi quos corrupti quidem,
-              sed labore deleniti.
-            </p>
-            <span>{"</>"}</span>
-          </div>
-          <div
-            className="course_info_item"
-            data-aos="fade-up"
-            data-aos-duration="4000"
-            data-aos-offset="170"
-          >
-            <p>ingliz tili</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-              quis autem. Vel recusandae, nihil consequuntur pariatur maxime
-              excepturi fugit et eos esse aliquam commodi quos corrupti quidem,
-              sed labore deleniti.
-            </p>
-            <span>EN</span>
-          </div>
-          <div
-            className="course_info_item"
-            data-aos="fade-up"
-            data-aos-duration="4000"
-            data-aos-offset="170"
-          >
-            <p>rus tili</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-              quis autem. Vel recusandae, nihil consequuntur pariatur maxime
-              excepturi fugit et eos esse aliquam commodi quos corrupti quidem,
-              sed labore deleniti.
-            </p>
-            <span>RU</span>
-          </div>
-          <div
-            className="course_info_item"
-            data-aos="fade-up"
-            data-aos-duration="4000"
-            data-aos-offset="170"
-          >
-            <p>dtm</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-              quis autem. Vel recusandae, nihil consequuntur pariatur maxime
-              excepturi fugit et eos esse aliquam commodi quos corrupti quidem,
-              sed labore deleniti.
-            </p>
-            <span>DTM</span>
-          </div>
+          {categori.map((item) => {
+            return (
+              <div
+                className="course_info_item"
+                data-aos="fade-up"
+                data-aos-duration="4000"
+                data-aos-offset="170"
+                key={item.id}
+              >
+                <p>{item.categoryName}</p>
+                <p>{item.description}</p>
+                <span>{item.background}</span>
+              </div>
+            );
+          })}
         </div>
 
         {/* ============ Conatct us section ========== */}

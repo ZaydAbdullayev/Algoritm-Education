@@ -1,3 +1,4 @@
+import React from "react";
 import "./algoritmMap.css";
 
 export const AlgoritmMap = () => {
@@ -16,7 +17,7 @@ export const AlgoritmMap = () => {
         width="100%"
         height="400"
         style={{ border: "0" }}
-        allowFullScreen=""
+        allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         data-aos="fade-up"
@@ -31,9 +32,14 @@ export const AlgoritmMap = () => {
       >
         <p>
           It's a long established fact that a reader will be distracted by the
-          redable content of a page when a looking at it's layout. The point of
-          using Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-          enim.
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution of
+          letters, as opposed to using 'Content here, content here', making it
+          look like readable English. Many desktop publishing packages and web
+          page editors now use Lorem Ipsum as their default model text, and a
+          search for 'lorem ipsum' will uncover many web sites still in their
+          infancy. Various versions have evolved over the years, sometimes by
+          accident, sometimes on purpose (injected humour and the like).
         </p>
         <div className="our_number">
           <a href="tel:+998191111111">

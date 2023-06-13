@@ -50,7 +50,7 @@ export const TeacherCorusel = () => {
     <div
       className="slider_container"
       data-aos="fade-up"
-      data-aos-duration="4000"
+      data-aos-duration="7000"
       data-aos-offset="180"
     >
       <h2>TAJRIBALI USTOZLARIMIZ</h2>
