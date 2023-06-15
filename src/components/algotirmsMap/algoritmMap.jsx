@@ -19,7 +19,7 @@ export const AlgoritmMap = () => {
         style={{ border: "0" }}
         allowFullScreen
         loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
+        referrerPolicy="feature-policy; ch-ua-form-factor 'none'"
         data-aos="fade-up"
         data-aos-duration="4000"
         data-aos-offset="200"

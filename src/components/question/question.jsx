@@ -3,12 +3,12 @@ import "./question.css";
 import { PatternFormat } from "react-number-format";
 
 export const Question = memo(() => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    console.log(data);
-  };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      console.log(data);
+    };
 
   return (
     <div

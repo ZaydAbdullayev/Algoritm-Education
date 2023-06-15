@@ -6,6 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 import { SnackbarProvider } from "notistack";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Loading } from "./components/loading/loading";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,17 +17,43 @@ root.render(
       maxSnack={2}
       style={{
         fontSize: "18px",
-        background: "#222",
+        background: "yellow",
         padding: "3%",
-        color: "yellow",
+        color: "#333",
       }}
       iconVariant={{ default: "👨🏻‍🎓" }}
     >
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Router />
+          <Loading />
+        </BrowserRouter>
+      </Provider>
     </SnackbarProvider>
   </Fragment>
 );
 
-AOS.init();
+AOS.init({ passive: true });
+
+// // AOS olay dinleyicilerini güncelle
+// function updateAOSListeners() {
+//   const aosElements = document.querySelectorAll("[data-aos]");
+//   aosElements.forEach((element) => {
+//     const options = {
+//       passive: true,
+//       // Diğer olay dinleyici seçenekleri
+//     };
+//     const eventTypes = ["scroll", "touchmove"];
+//     eventTypes.forEach((eventType) => {
+//       const listeners = element[eventType];
+//       if (listeners) {
+//         listeners.forEach((listener) => {
+//           listener.passive = options.passive;
+//         });
+//       }
+//     });
+//   });
+// }
+
+// // Sayfa yüklendikten sonra AOS olay dinleyicilerini güncelle
+// window.addEventListener("load", updateAOSListeners);

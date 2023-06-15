@@ -9,6 +9,15 @@ import slide_img2 from "../../assets/images/22db106e254fa3cea33535c40704d7be.jpg
 import slide_img3 from "../../assets/images/Unity-London-workplace-screens-meeting-room-1200x675.jpg";
 
 export const Corusel = () => {
+  const images = [
+    slide_img1,
+    slide_img2,
+    slide_img3,
+    slide_img1,
+    slide_img2,
+    slide_img3,
+  ];
+
   const settings = {
     dots: true,
     infinite: true,
@@ -19,7 +28,6 @@ export const Corusel = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     initialSlide: 0,
-
     appendDots: (dots) => (
       <div style={{ marginBottom: "50px" }}>
         <ul> {dots} </ul>
@@ -30,24 +38,13 @@ export const Corusel = () => {
   return (
     <div className="slider">
       <Slider {...settings}>
-        <div className="img_box">
-          <img src={slide_img1} alt="foto" />
-        </div>
-        <div className="img_box">
-          <img src={slide_img2} alt="foto" />
-        </div>
-        <div className="img_box">
-          <img src={slide_img3} alt="foto" />
-        </div>
-        <div className="img_box">
-          <img src={slide_img1} alt="foto" />
-        </div>
-        <div className="img_box">
-          <img src={slide_img2} alt="foto" />
-        </div>
-        <div className="img_box">
-          <img src={slide_img3} alt="foto" />
-        </div>
+        {images.map((img, index) => {
+          return (
+            <div className="img_box" key={index}>
+              <img src={img} alt="foto" />
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );

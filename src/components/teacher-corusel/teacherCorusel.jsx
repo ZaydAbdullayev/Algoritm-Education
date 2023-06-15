@@ -10,12 +10,51 @@ import slide_img6 from "../../assets/images/man2.jpg";
 import slide_img7 from "../../assets/images/images.jpg";
 
 export const TeacherCorusel = () => {
+  const teacher = [
+    {
+      id: 1,
+      fullname: "Karomatxon Q.",
+      skills: "ingliz tili",
+      img: slide_img4,
+    },
+    {
+      id: 2,
+      fullname: "Karomatxon Q.",
+      skills: "web dasturlash",
+      img: slide_img5,
+    },
+    {
+      id: 3,
+      fullname: "Abdusattor R.",
+      skills: "rus tili",
+      img: slide_img6,
+    },
+    {
+      id: 4,
+      fullname: "Karomatxon Q.",
+      skills: "DTM",
+      img: slide_img7,
+    },
+    {
+      id: 5,
+      fullname: "Karomatxon Q.",
+      skills: "ingliz tili",
+      img: slide_img4,
+    },
+    {
+      id: 6,
+      fullname: "Karomatxon Q.",
+      skills: "web development",
+      img: slide_img5,
+    },
+  ];
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 700,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
@@ -56,48 +95,17 @@ export const TeacherCorusel = () => {
       <h2>TAJRIBALI USTOZLARIMIZ</h2>
 
       <Slider {...settings} className="slider_box">
-        <div className="item">
-          <img src={slide_img4} alt="foto" />
-          <div className="teacher_info">
-            <p>Karomatxon Q.</p>
-            <span>Ingliz tili</span>
-          </div>
-        </div>
-        <div className="item">
-          <img src={slide_img5} alt="foto" />
-          <div className="teacher_info">
-            <p>Karomatxon Q.</p>
-            <span>Ingliz tili</span>
-          </div>
-        </div>
-        <div className="item">
-          <img src={slide_img6} alt="foto" />
-          <div className="teacher_info">
-            <p>Karomatxon Q.</p>
-            <span>Ingliz tili</span>
-          </div>
-        </div>
-        <div className="item">
-          <img src={slide_img7} alt="foto" />
-          <div className="teacher_info">
-            <p>Karomatxon Q.</p>
-            <span>Ingliz tili</span>
-          </div>
-        </div>
-        <div className="item">
-          <img src={slide_img4} alt="foto" />
-          <div className="teacher_info">
-            <p>Karomatxon Q.</p>
-            <span>Ingliz tili</span>
-          </div>
-        </div>
-        <div className="item">
-          <img src={slide_img5} alt="foto" />
-          <div className="teacher_info">
-            <p>Karomatxon Q.</p>
-            <span>Ingliz tili</span>
-          </div>
-        </div>
+        {teacher.map((item) => {
+          return (
+            <div className="item" key={item.id}>
+              <img src={item.img} alt="foto" />
+              <div className="teacher_info">
+                <p>{item.fullname}</p>
+                <span>{item.skills}</span>
+              </div>
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );

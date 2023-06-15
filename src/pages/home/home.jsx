@@ -7,11 +7,15 @@ import { Question } from "../../components/question/question";
 import { VideoOffer } from "../../components/video-offer/video-offer";
 import { AlgoritmMap } from "../../components/algotirmsMap/algoritmMap";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { acLoading } from "../../redux/loading";
 
 const base_url = process.env.REACT_APP_BASE_URL;
 export const Home = () => {
+  const dispatch = useDispatch();
   const [categori, setCategori] = useState([]);
   useEffect(() => {
+    dispatch(acLoading(true));
     const url = `${base_url}/categories`;
     axios(url)
       .then((res) => {
@@ -19,8 +23,11 @@ export const Home = () => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        dispatch(acLoading(false));
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="home_container">
