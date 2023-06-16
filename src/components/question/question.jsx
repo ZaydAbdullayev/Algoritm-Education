@@ -1,14 +1,25 @@
 import React, { memo } from "react";
 import "./question.css";
 import { PatternFormat } from "react-number-format";
+import { useSnackbar } from "notistack";
+import { useDispatch } from "react-redux";
+import { acLoading } from "../../redux/loading";
 
 export const Question = memo(() => {
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData.entries());
-      console.log(data);
-    };
+  const { enqueueSnackbar } = useSnackbar();
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(acLoading(true));
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
+    dispatch(acLoading(false));
+    const msg =
+      "Habar muvoffaqiyatli yuborildi tez orada siz bilan bog'lanamiz!";
+    enqueueSnackbar(msg, { variant: "default" });
+  };
 
   return (
     <div

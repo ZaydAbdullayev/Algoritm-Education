@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./teacherCorusel.css";
+import axios from "axios";
 
 import slide_img4 from "../../assets/images/woman1.jpg";
 import slide_img5 from "../../assets/images/woman.jpg";
 import slide_img6 from "../../assets/images/man2.jpg";
 import slide_img7 from "../../assets/images/images.jpg";
 
+const base_url = process.env.REACT_APP_BASE_URL;
 export const TeacherCorusel = () => {
-  const teacher = [
+  const teacher_data = [
     {
       id: 1,
       fullname: "Karomatxon Q.",
@@ -48,6 +50,21 @@ export const TeacherCorusel = () => {
       img: slide_img5,
     },
   ];
+
+  const [teacher, setTeacher] = useState([]);
+
+  useEffect(() => {
+    const url = `${base_url}/get/teachers`;
+    axios(url)
+      .then((res) => {
+        setTeacher(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  console.log(teacher);
 
   const settings = {
     dots: false,
@@ -95,7 +112,7 @@ export const TeacherCorusel = () => {
       <h2>TAJRIBALI USTOZLARIMIZ</h2>
 
       <Slider {...settings} className="slider_box">
-        {teacher.map((item) => {
+        {teacher_data.map((item) => {
           return (
             <div className="item" key={item.id}>
               <img src={item.img} alt="foto" />

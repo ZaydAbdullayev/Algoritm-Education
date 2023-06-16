@@ -17,9 +17,9 @@ root.render(
       maxSnack={2}
       style={{
         fontSize: "18px",
-        background: "yellow",
+        background: "#333",
         padding: "3%",
-        color: "#333",
+        color: "yellow",
       }}
       iconVariant={{ default: "👨🏻‍🎓" }}
     >
