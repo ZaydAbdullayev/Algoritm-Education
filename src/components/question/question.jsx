@@ -22,25 +22,16 @@ export const Question = memo(() => {
   };
 
   return (
-    <div
-      className="question_box"
-      data-aos="fade-up"
-      data-aos-duration="7000"
-      data-aos-offset="180"
-    >
+    <div className="question_box" data-aos="zoom-in-up">
       <h3>SAVOLLARINGIZGA JAVOB BERISHDAN MAMNUNMIZ</h3>
       <form
         className="question_form"
         onSubmit={handleSubmit}
-        data-aos="fade-up"
-        data-aos-duration="7000"
-        data-aos-offset="180"
+        data-aos="zoom-in-up"
       >
         <textarea
           name="question"
           id="question"
-          cols="30"
-          rows="10"
           placeholder="Savollaringizni kiriting"
           required
         ></textarea>

@@ -9,6 +9,7 @@ import "aos/dist/aos.css";
 import { Loading } from "./components/loading/loading";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -34,26 +35,3 @@ root.render(
 );
 
 AOS.init({ passive: true });
-
-// // AOS olay dinleyicilerini güncelle
-// function updateAOSListeners() {
-//   const aosElements = document.querySelectorAll("[data-aos]");
-//   aosElements.forEach((element) => {
-//     const options = {
-//       passive: true,
-//       // Diğer olay dinleyici seçenekleri
-//     };
-//     const eventTypes = ["scroll", "touchmove"];
-//     eventTypes.forEach((eventType) => {
-//       const listeners = element[eventType];
-//       if (listeners) {
-//         listeners.forEach((listener) => {
-//           listener.passive = options.passive;
-//         });
-//       }
-//     });
-//   });
-// }
-
-// // Sayfa yüklendikten sonra AOS olay dinleyicilerini güncelle
-// window.addEventListener("load", updateAOSListeners);

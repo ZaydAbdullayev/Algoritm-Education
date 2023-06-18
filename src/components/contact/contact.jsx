@@ -49,20 +49,9 @@ export const Contact = memo(() => {
   };
 
   return (
-    <div
-      className="contact_box"
-      data-aos="fade-up"
-      data-aos-duration="4000"
-      data-aos-offset="180"
-    >
+    <div className="contact_box" data-aos="zoom-in-up">
       <p>BATAFSIL MA'LUMOT OLISH OCHUN BIZ BILAN BOG'LANIG</p>
-      <button
-        onClick={sendMessage}
-        className="send_btn"
-        data-aos="fade-up"
-        data-aos-duration="7000"
-        data-aos-offset="180"
-      >
+      <button onClick={sendMessage} className="send_btn" data-aos="zoom-in-up">
         {message ? "BEKOR QILISH" : "BOG'LANISH"}
       </button>
       <form

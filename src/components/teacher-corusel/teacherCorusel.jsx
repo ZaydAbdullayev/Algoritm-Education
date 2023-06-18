@@ -4,65 +4,29 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./teacherCorusel.css";
 import axios from "axios";
-
-import slide_img4 from "../../assets/images/woman1.jpg";
-import slide_img5 from "../../assets/images/woman.jpg";
-import slide_img6 from "../../assets/images/man2.jpg";
-import slide_img7 from "../../assets/images/images.jpg";
+import Skeleton from "react-loading-skeleton";
+import { acLoading } from "../../redux/loading";
+import { useDispatch } from "react-redux";
 
 const base_url = process.env.REACT_APP_BASE_URL;
 export const TeacherCorusel = () => {
-  const teacher_data = [
-    {
-      id: 1,
-      fullname: "Karomatxon Q.",
-      skills: "ingliz tili",
-      img: slide_img4,
-    },
-    {
-      id: 2,
-      fullname: "Karomatxon Q.",
-      skills: "web dasturlash",
-      img: slide_img5,
-    },
-    {
-      id: 3,
-      fullname: "Abdusattor R.",
-      skills: "rus tili",
-      img: slide_img6,
-    },
-    {
-      id: 4,
-      fullname: "Karomatxon Q.",
-      skills: "DTM",
-      img: slide_img7,
-    },
-    {
-      id: 5,
-      fullname: "Karomatxon Q.",
-      skills: "ingliz tili",
-      img: slide_img4,
-    },
-    {
-      id: 6,
-      fullname: "Karomatxon Q.",
-      skills: "web development",
-      img: slide_img5,
-    },
-  ];
-
-  const [teacher, setTeacher] = useState([]);
+  const [teacher, setTeacher] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const url = `${base_url}/get/teachers`;
+    dispatch(acLoading(true));
     axios(url)
       .then((res) => {
-        setTeacher(res.data.data);
+        setTeacher(res?.data?.data);
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        dispatch(acLoading(false));
       });
-  }, []);
+  }, [dispatch]);
 
   console.log(teacher);
 
@@ -71,11 +35,12 @@ export const TeacherCorusel = () => {
     infinite: true,
     speed: 700,
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 4,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     initialSlide: 0,
+    gap: 10 + "px",
     responsive: [
       {
         breakpoint: 1024,
@@ -102,23 +67,20 @@ export const TeacherCorusel = () => {
       },
     ],
   };
+
+  const img = <Skeleton />;
   return (
-    <div
-      className="slider_container"
-      data-aos="fade-up"
-      data-aos-duration="7000"
-      data-aos-offset="180"
-    >
+    <div className="slider_container" data-aos="zoom-in-up">
       <h2>TAJRIBALI USTOZLARIMIZ</h2>
 
       <Slider {...settings} className="slider_box">
-        {teacher_data.map((item) => {
+        {teacher?.map((item, index) => {
           return (
-            <div className="item" key={item.id}>
-              <img src={item.img} alt="foto" />
+            <div className="item" key={index}>
+              <img src={img} alt="teacher_foto" />
               <div className="teacher_info">
-                <p>{item.fullname}</p>
-                <span>{item.skills}</span>
+                <p>{item.fullname || <Skeleton />}</p>
+                <span>{item.subject || <Skeleton />}</span>
               </div>
             </div>
           );
