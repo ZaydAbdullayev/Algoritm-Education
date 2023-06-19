@@ -6,12 +6,13 @@ import "./teacherCorusel.css";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import { acLoading } from "../../redux/loading";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const base_url = process.env.REACT_APP_BASE_URL;
 export const TeacherCorusel = () => {
   const [teacher, setTeacher] = useState(null);
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
     const url = `${base_url}/get/teachers`;
@@ -27,8 +28,6 @@ export const TeacherCorusel = () => {
         dispatch(acLoading(false));
       });
   }, [dispatch]);
-
-  console.log(teacher);
 
   const settings = {
     dots: false,
@@ -68,23 +67,32 @@ export const TeacherCorusel = () => {
     ],
   };
 
-  const img = <Skeleton />;
+  const skeleton = [0, 0, 0, 0];
+
   return (
     <div className="slider_container" data-aos="zoom-in-up">
       <h2>TAJRIBALI USTOZLARIMIZ</h2>
 
       <Slider {...settings} className="slider_box">
-        {teacher?.map((item, index) => {
-          return (
-            <div className="item" key={index}>
-              <img src={img} alt="teacher_foto" />
-              <div className="teacher_info">
-                <p>{item.fullname || <Skeleton />}</p>
-                <span>{item.subject || <Skeleton />}</span>
-              </div>
-            </div>
-          );
-        })}
+        {loading
+          ? skeleton.map((index) => {
+              return (
+                <div className="item" key={index}>
+                  {<Skeleton width={"100%"} height={"100%"} />}
+                </div>
+              );
+            })
+          : teacher?.map((item) => {
+              return (
+                <div className="item" key={item.id}>
+                  <img src={item.img || <Skeleton />} alt="teacher_foto" />
+                  <div className="teacher_info">
+                    <p>{item.fullname || <Skeleton />}</p>
+                    <span>{item.subject || <Skeleton />}</span>
+                  </div>
+                </div>
+              );
+            })}
       </Slider>
     </div>
   );
