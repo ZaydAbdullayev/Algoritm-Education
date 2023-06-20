@@ -7,20 +7,20 @@ import { Question } from "../../components/question/question";
 import { VideoOffer } from "../../components/video-offer/video-offer";
 import { AlgoritmMap } from "../../components/algotirmsMap/algoritmMap";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { acLoading } from "../../redux/loading";
-// import Skeleton from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
 
 const base_url = process.env.REACT_APP_BASE_URL;
 export const Home = () => {
   const dispatch = useDispatch();
   const [categori, setCategori] = useState([]);
-  // const [loading, setLoading] = useState(true);
+  const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
     dispatch(acLoading(true));
 
-    const url = `${base_url}/categories`;
+    const url = `${base_url}/get/subjects`;
     axios(url)
       .then((res) => {
         setCategori(res?.data?.data);
@@ -30,11 +30,27 @@ export const Home = () => {
       })
       .finally(() => {
         dispatch(acLoading(false));
-        // setLoading(false);
       });
   }, [dispatch]);
 
-  // const categori_skeleton = [0, 0, 0, 0];
+  const categori_skeleton = [
+    {
+      id: "jhgfhjd",
+      name: "0",
+    },
+    {
+      id: "jhjd",
+      name: "0",
+    },
+    {
+      id: "jhghjd",
+      name: "0",
+    },
+    {
+      id: "jhgf",
+      name: "0",
+    },
+  ];
 
   return (
     <div className="home_container">
@@ -45,19 +61,37 @@ export const Home = () => {
         {/* ============ About Algoritm's course ========== */}
         <div className="course_info_box" data-aos="zoom-in-up">
           <p>algoritm ta'limda siz</p>
-          {categori.map((item) => {
-            return (
-              <div
-                className="course_info_item"
-                data-aos="zoom-in-up"
-                key={item.id}
-              >
-                <p>{item.categoryName}</p>
-                <p>{item.description}</p>
-                <span>{item.background}</span>
-              </div>
-            );
-          })}
+          {loading
+            ? categori_skeleton.map((item) => {
+                return (
+                  <div
+                    className="course_info_item"
+                    data-aos="zoom-in-up"
+                    key={item.id}
+                    style={loading ? { background: "#eee" } : {}}
+                  >
+                    <p>
+                      <Skeleton />
+                    </p>
+                    <p>
+                      <Skeleton count={5} />
+                    </p>
+                  </div>
+                );
+              })
+            : categori.map((item) => {
+                return (
+                  <div
+                    className="course_info_item"
+                    data-aos="zoom-in-up"
+                    key={item.id}
+                  >
+                    <p>{item.categoryName}</p>
+                    <p>{item.description}</p>
+                    <span>{item.background}</span>
+                  </div>
+                );
+              })}
         </div>
 
         {/* ============ Conatct us section ========== */}

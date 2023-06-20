@@ -67,7 +67,24 @@ export const TeacherCorusel = () => {
     ],
   };
 
-  const skeleton = [0, 0, 0, 0];
+  const skeleton = [
+    {
+      id: "ertyhjd",
+      name: "0",
+    },
+    {
+      id: "jcvbnh",
+      name: "0",
+    },
+    {
+      id: "kjhbv",
+      name: "0",
+    },
+    {
+      id: "jbhgfygy",
+      name: "0",
+    },
+  ];
 
   return (
     <div className="slider_container" data-aos="zoom-in-up">
