@@ -35,10 +35,6 @@
 .navbar>:nth-child(1)>:nth-child(2) {
     height: 100%;
     margin: 0 0.5% 0 1%;
-    animation: logo 3s ease infinite;
-    -webkit-animation: logo 3s ease infinite;
-    animation-delay: 3s;
-    -webkit-animation-delay: 3s;
 }
 
 .menu_btn {
@@ -112,33 +108,7 @@
     border: none;
 }
 
-@keyframes logo {
-    0% {
-        transform: rotateY(0deg);
-    }
 
-    80% {
-        transform: rotateY(360deg)
-    }
-
-    100% {
-        transform: rotateY(360deg);
-    }
-}
-
-@-webkit-keyframes logo {
-    0% {
-        transform: rotateY(0deg) rotateZ(3deg);
-    }
-
-    80% {
-        transform: rotateY(360deg)
-    }
-
-    100% {
-        transform: rotateY(360deg);
-    }
-}
 
 @media(max-width: 780px) {
     .navbar>:nth-child(1)>img {

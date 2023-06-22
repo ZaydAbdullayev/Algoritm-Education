@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { Icon } from "../icon/icon";
 
 import icon_piece1 from "../../assets/images/ALGORITM.svg";
-import icon_piece2 from "../../assets/images/icon_centre.svg";
 import icon_piece3 from "../../assets/images/TALIM.svg";
 
 export const Navbar = () => {
@@ -21,7 +21,7 @@ export const Navbar = () => {
       <ul className="navbar">
         <Link to="/">
           <img src={icon_piece1} alt="foto" />
-          <img src={icon_piece2} alt="foto" />
+          <Icon />
           <img src={icon_piece3} alt="foto" />
         </Link>
         <Link to="/kurslar">Kurslar</Link>
