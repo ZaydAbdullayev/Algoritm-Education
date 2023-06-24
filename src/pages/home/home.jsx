@@ -10,7 +10,6 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { acLoading } from "../../redux/loading";
 import Skeleton from "react-loading-skeleton";
-import { Icon } from "../../components/icon/icon";
 
 const base_url = process.env.REACT_APP_BASE_URL;
 export const Home = () => {
@@ -94,8 +93,6 @@ export const Home = () => {
                 );
               })}
         </div>
-
-        <Icon />
 
         {/* ============ Conatct us section ========== */}
         <Contact />
