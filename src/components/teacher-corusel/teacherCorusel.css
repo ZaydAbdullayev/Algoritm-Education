@@ -102,3 +102,17 @@
         height: 240px;
     }
 }
+
+@media(max-width: 400px) {
+    .item {
+        height: 350px;
+    }
+
+    .slider_box .slick-slide>div {
+        margin: 0 35px;
+    }
+
+    .slider_box .slick-list {
+        margin: 0 -5px;
+    }
+}

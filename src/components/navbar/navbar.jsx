@@ -10,11 +10,15 @@ export const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const openMenu = () => {
     setMenu((prevMenu) => !prevMenu);
-  };
 
-  setTimeout(() => {
-    setMenu(false);
-  }, 5000);
+    if (menu) {
+      setTimeout(() => {
+        setMenu(false);
+      }, 7000);
+    } else {
+      clearTimeout();
+    }
+  };
 
   return (
     <nav className="nav_container">

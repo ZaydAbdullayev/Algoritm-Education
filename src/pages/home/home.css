@@ -85,10 +85,18 @@
     .course_info_item>:nth-child(2) {
         line-height: 2;
     }
+
+    .course_info_item>span {
+        font-size: 100px;
+    }
 }
 
 @media(max-width: 400px) {
     .course_info_item>:nth-child(2) {
         line-height: 1.6;
+    }
+
+    .course_info_item>span {
+        font-size: 80px;
     }
 }
