@@ -20,7 +20,8 @@
 }
 
 #question {
-    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
     height: 150px;
     padding: 2%;
     overflow-y: auto;
@@ -29,6 +30,11 @@
     font-size: var(--fs3);
     resize: none;
     outline: none;
+    /* overflow: hidden; */
+}
+
+#question::-webkit-scrollbar {
+    display: none;
 }
 
 .question_form>input,

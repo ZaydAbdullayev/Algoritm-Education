@@ -19,6 +19,7 @@ export const Question = memo(() => {
     const msg =
       "Habar muvoffaqiyatli yuborildi tez orada siz bilan bog'lanamiz!";
     enqueueSnackbar(msg, { variant: "default" });
+    e.target.reset();
   };
 
   return (
