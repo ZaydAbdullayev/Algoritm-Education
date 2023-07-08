@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./video-offer.css";
 import Skeleton from "react-loading-skeleton";
+import axios from "axios";
 
+const base_url = process.env.REACT_APP_BASE_URL;
 export const VideoOffer = () => {
   const [loading, setLoading] = useState(false);
+  const [video_data, setVideo_data] = useState([]);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -44,26 +48,41 @@ export const VideoOffer = () => {
     ],
   };
 
-  window.addEventListener("load", (e) => {
-    setLoading(true);
-  });
+  useEffect(() => {
+    axios(`${base_url}/get/videos`)
+      .then((res) => {
+        setVideo_data(res?.data?.data);
+        console.log(res.data?.data);
+        // setLoading(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
-  const video_data = [
-    "fcry0C0hlQg",
-    "fcry0C0hlQg",
-    "fcry0C0hlQg",
-    "fcry0C0hlQg",
-    "fcry0C0hlQg",
-    "fcry0C0hlQg",
-  ];
-
-  const skeleton = [0, 0, 0];
+  // const skeleton = [0, 0, 0];
 
   return (
     <div className="slider_container" data-aos="zoom-in-up">
       <h2>VIDEO LAVXALAR</h2>
       <Slider {...settings} className="slider_box">
-        {!loading
+        {video_data?.map((video) => {
+          return (
+            <div className="item item_v" key={video.id}>
+              <iframe
+                src={video.link}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          );
+        })}
+        {/* {loading
           ? skeleton.map((index) => {
               return (
                 <div className="item item_v" key={index}>
@@ -71,11 +90,11 @@ export const VideoOffer = () => {
                 </div>
               );
             })
-          : video_data.map((url, index) => {
+          : video_data?.map((video) => {
               return (
-                <div className="item item_v" key={index}>
+                <div className="item item_v" key={video.id}>
                   <iframe
-                    src={`https://www.youtube.com/embed/${url}`}
+                    src={video.link}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -83,7 +102,7 @@ export const VideoOffer = () => {
                   ></iframe>
                 </div>
               );
-            })}
+            })} */}
       </Slider>
     </div>
   );

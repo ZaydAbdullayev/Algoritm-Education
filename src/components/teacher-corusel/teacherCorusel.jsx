@@ -15,11 +15,11 @@ export const TeacherCorusel = () => {
   const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
-    const url = `${base_url}/get/teachers`;
     dispatch(acLoading(true));
-    axios(url)
+    axios(`${base_url}/get/teachers`)
       .then((res) => {
         setTeacher(res?.data?.data);
+        // const img = JSON.parse(res?.data?.data[0].img);
       })
       .catch((err) => {
         console.log(err);
@@ -28,6 +28,8 @@ export const TeacherCorusel = () => {
         dispatch(acLoading(false));
       });
   }, [dispatch]);
+
+  // const img = JSON.parse(teacher);
 
   const settings = {
     dots: false,
