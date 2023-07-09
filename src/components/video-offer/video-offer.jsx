@@ -3,13 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./video-offer.css";
-import Skeleton from "react-loading-skeleton";
-import axios from "axios";
+import { ApiGetService } from "../../service/api.service";
 
-const base_url = process.env.REACT_APP_BASE_URL;
 export const VideoOffer = () => {
-  const [loading, setLoading] = useState(false);
-  const [video_data, setVideo_data] = useState([]);
+  const [videoData, setVideoData] = useState([]);
+  const [error, setError] = useState(null);
 
   const settings = {
     dots: false,
@@ -49,61 +47,42 @@ export const VideoOffer = () => {
   };
 
   useEffect(() => {
-    axios(`${base_url}/get/videos`)
-      .then((res) => {
-        setVideo_data(res?.data?.data);
-        console.log(res.data?.data);
-        // setLoading(true);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    document.cookie = "third_party_var=value; SameSite=None; Secure";
+    fetchVideos();
   }, []);
 
-  // const skeleton = [0, 0, 0];
+  const fetchVideos = () => {
+    ApiGetService.fetching("get/videos")
+      .then((res) => {
+        setVideoData(res?.data?.data);
+      })
+      .catch((err) => {
+        setError(err.message || "An error occurred");
+      });
+  };
 
   return (
     <div className="slider_container" data-aos="zoom-in-up">
       <h2>VIDEO LAVXALAR</h2>
-      <Slider {...settings} className="slider_box">
-        {video_data?.map((video) => {
-          return (
-            <div className="item item_v" key={video.id}>
-              <iframe
-                src={video.link}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
-          );
-        })}
-        {/* {loading
-          ? skeleton.map((index) => {
-              return (
-                <div className="item item_v" key={index}>
-                  {<Skeleton width={"100%"} height={"100%"} />}
-                </div>
-              );
-            })
-          : video_data?.map((video) => {
-              return (
-                <div className="item item_v" key={video.id}>
-                  <iframe
-                    src={video.link}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              );
-            })} */}
-      </Slider>
+      {error ? (
+        <div>Error: {error}</div>
+      ) : (
+        <Slider {...settings} className="slider_box">
+          {videoData?.map((video) => {
+            return (
+              <div className="item item_v" key={video.id}>
+                <iframe
+                  src={video.link}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            );
+          })}
+        </Slider>
+      )}
     </div>
   );
 };

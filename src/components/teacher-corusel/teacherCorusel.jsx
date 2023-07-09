@@ -3,12 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./teacherCorusel.css";
-import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import { acLoading } from "../../redux/loading";
 import { useDispatch, useSelector } from "react-redux";
+import { ApiGetService } from "../../service/api.service";
 
-const base_url = process.env.REACT_APP_BASE_URL;
 export const TeacherCorusel = () => {
   const [teacher, setTeacher] = useState(null);
   const dispatch = useDispatch();
@@ -16,10 +15,9 @@ export const TeacherCorusel = () => {
 
   useEffect(() => {
     dispatch(acLoading(true));
-    axios(`${base_url}/get/teachers`)
+    ApiGetService.fetching("get/teachers")
       .then((res) => {
         setTeacher(res?.data?.data);
-        // const img = JSON.parse(res?.data?.data[0].img);
       })
       .catch((err) => {
         console.log(err);
@@ -29,7 +27,6 @@ export const TeacherCorusel = () => {
       });
   }, [dispatch]);
 
-  // const img = JSON.parse(teacher);
 
   const settings = {
     dots: false,

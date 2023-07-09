@@ -6,12 +6,11 @@ import { TeacherCorusel } from "../../components/teacher-corusel/teacherCorusel"
 import { Question } from "../../components/question/question";
 import { VideoOffer } from "../../components/video-offer/video-offer";
 import { AlgoritmMap } from "../../components/algotirmsMap/algoritmMap";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { acLoading } from "../../redux/loading";
 import Skeleton from "react-loading-skeleton";
+import { ApiGetService } from "../../service/api.service";
 
-const base_url = process.env.REACT_APP_BASE_URL;
 export const Home = () => {
   const dispatch = useDispatch();
   const [categori, setCategori] = useState([]);
@@ -19,9 +18,7 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(acLoading(true));
-
-    const url = `${base_url}/get/subjects`;
-    axios(url)
+    ApiGetService.fetching("get/subjects")
       .then((res) => {
         setCategori(res?.data?.data);
       })
